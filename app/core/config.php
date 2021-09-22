@@ -17,6 +17,10 @@ define('PROTOCAL','http');
 
 /*root and asset paths*/
 
+if(!array_key_exists("SERVER_NAME", $_SERVER)) {
+	$_SERVER['SERVER_NAME'] = "";
+}
+
 $path = str_replace("\\", "/",PROTOCAL ."://" . $_SERVER['SERVER_NAME'] . __DIR__  . "/");
 $path = str_replace($_SERVER['DOCUMENT_ROOT'], "", $path);
 

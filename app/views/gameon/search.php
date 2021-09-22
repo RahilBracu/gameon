@@ -75,7 +75,7 @@
                                 </button>
                             </form>
                             <form method="POST">
-                                <input class="input" type="hidden" name="criteria" value="SELECT * FROM games WHERE YEAR(release_date) = 2020">
+                                <input class="input" type="hidden" name="criteria" value="SELECT * FROM games WHERE YEAR(release_date) >= 2020">
                                 <button type="submit">
                                     <p>Recent Games</p>
                                 </button>

@@ -129,7 +129,6 @@ Class Games {
             
             if($data) {
                 header("Location:".ROOT."game/".$_SESSION['game_name']."/user-reviews");
-                die;
             }
         } else {
             $_SESSION['error'] = "Please enter valid information.";
@@ -188,7 +187,7 @@ Class Games {
             $a['game_name'] = $data->game_name;
             $query = "UPDATE games SET avg_rating = $avg, avg_rating_per = $avg_per WHERE game_name = :game_name";
             
-            $DB->write($query, $a);
+            return $DB->write($query, $a);
         }
     }
 
@@ -219,7 +218,7 @@ Class Games {
             $a['game_name'] = $data->game_name;
             $query = "UPDATE games SET avg_score = $avg WHERE game_name = :game_name";
             
-            $DB->write($query, $a);
+            return $DB->write($query, $a);
         }
     }
 
@@ -243,7 +242,6 @@ Class Games {
             
             if($data) {
                 header("Location:".ROOT."criticsubmission/".$_SESSION['game_name']."/pending");
-                die;
             }
         } else {
             $_SESSION['error'] = "Please enter valid information.";
@@ -280,7 +278,6 @@ Class Games {
 
         if($data) {
             header("Location:".ROOT."criticrequest");
-            die;
         }
     }
 
@@ -335,7 +332,6 @@ Class Games {
             
             if($data) {
                 header("Location:".ROOT."search");
-                die;
             } else {
                 $_SESSION['error'] = "Something went wrong.";
             }
@@ -406,7 +402,6 @@ Class Games {
             
             if($data) {
                 header("Location:".ROOT."game/".$game_name."/summary");
-                die;
             } else {
                 $_SESSION['error'] = "Something went wrong.";
             }
@@ -431,7 +426,6 @@ Class Games {
                 
             if($data) {
                 header("Location:".ROOT."search");
-                die;
             }
         }
     }

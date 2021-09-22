@@ -22,7 +22,6 @@ Class User {
                 $_SESSION['password'] = $data[0]->password;
 
                 header("Location:".ROOT."home");
-                die;
             } else {
                 $_SESSION['error'] = "Wrong username or password.";
             }
@@ -49,7 +48,6 @@ Class User {
 
             if($data) {
                 header("Location:".ROOT."signin");
-                die;
             }
         } else {
             $_SESSION['error'] = "Please enter valid information.";
@@ -90,7 +88,6 @@ Class User {
         unset($_SESSION['password']);
 
         header("Location:".ROOT."signin");
-        die;
     }
 
     function edit_profile($POST) {
@@ -110,7 +107,6 @@ Class User {
 
             if($data) {
                 header("Location:".ROOT."account/".$_SESSION['user_id']."/account-info");
-                die;
             }
         } else {
             $_SESSION['error'] = "Please enter valid information.";
@@ -134,7 +130,6 @@ Class User {
     
                     if($data) {
                         header("Location:".ROOT."account/".$_SESSION['user_id']."/account-info");
-                        die;
                     }
                 } else {
                     $_SESSION['error'] = "New and confirmed passwords do not match.";
@@ -161,7 +156,6 @@ Class User {
                 
                 if($data) {
                     header("Location:".ROOT."signout");
-                    die;
                 }
             } else {
                 $_SESSION['error'] = "You've entered wrong password.";

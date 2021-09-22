@@ -91,7 +91,7 @@
                 <div class="cr">
                     <p>Avg. Critic Score:</p>
                     <div class="score">
-                        <p><?=$data['game_info'][0]->avg_score?></p>
+                        <p><?=number_format((float)$data['game_info'][0]->avg_score, 1, '.', '')?></p>
                     </div>
                 </div>
             </div>
